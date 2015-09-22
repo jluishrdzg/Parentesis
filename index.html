@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>PruebaGit</title>
+	<link rel="stylesheet" href="libs/semantic.css" />
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body ng-controller="ctrlApp">
+	<div class="ui pointing menu ">
+	  <a class="active item">Inicio</a>
+	  <a class="item" ng-click="showForm()">Agregar Personajes</a>
+	  <a class="item">Ver Personajes</a>
+	  <div class="right menu">
+	    <div class="item">
+	      <div class="ui transparent icon input">
+	        <input placeholder="Buscar..." type="text">
+	        <i class="search link icon"></i>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="ui grid" ng-show="ocultar">
+	  <div class="wide column container ">
+	  	<div class="wrapper" align="center">
+	  		<h1>Do whatever you want when you want to.</h1>
+	  		<button class="ui button blue btn" >Ver más</button>
+	  	</div><!-- /.wrapper -->
+	  </div>
+	</div>
+
+
+<form class="ui form formulario" ng-hide="ocultar">
+	  <h4 class="ui dividing header">Personaje Información</h4>
+	  <div class="field">
+	    <label>Name</label>
+	    <div class="two fields">
+	      <div class="field">
+	        <input name="shipping[first-name]"  ng-model = "nombre" placeholder="First Name" type="text">
+	      </div>
+	      <div class="field">
+	        <input name="shipping[last-name]" ng-model = "apellido" placeholder="Last Name" type="text">
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="field">
+	    <label>Billing Address</label>
+	    <div class="fields">
+	      <div class="twelve wide field">
+	        <input name="shipping[address]" ng-model = "calle" placeholder="Street Address" type="text">
+	      </div>
+	      <div class="four wide field">
+	        <input name="shipping[address-2]" ng-model = "numeroPostal" placeholder="Apt #" type="text">
+	      </div>
+	    </div>
+	  </div>
+
+
+  		<div class="field" align="right">
+  			<button class="ui button negative">Cancelar</button>
+  			<button class="ui button positive" ng-click="guardarDireccion()">Guardar</button>
+  		</div>
+
+  	<div class="two fields">
+	    <div class="field">
+		    <label>State</label>
+		    <select ng-model = "estados" class="ui fluid dropdown">
+		    	<option value="">State</option>
+			    <option value="AL">Alabama</option>
+			    <option value="AK">Alaska</option>
+			    <option value="AZ">Arizona</option>
+		     </select>
+	    </div>
+	    <div class="field">
+	      <label>Country</label>
+	      	<div class="ui fluid search selection dropdown">
+			        <input name="country"  ng-model = "pais" type="hidden">
+			        <i class="dropdown icon"></i>
+			        <div class="default text">Select Country</div>
+			    <div class="menu">
+				    <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
+				    <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
+				    <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
+				    <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
+				    <div class="item" data-value="as"><i class="as flag"></i>American Samoa</div>
+				</div>
+	      	</div>
+	    </div>
+  </div>
+
+</form>
+
+	<!-- JS -->
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="js/controllers/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="libs/semantic.js"></script>
+</body>
+</html>
