@@ -3,6 +3,7 @@ var fs = require('fs');
 var mysql = require('mysql');
 var app = express();
 
+app.get('/index.html', mostrarIndex);
 app.get('/', mostrarIndex);
 
 function mostrarIndex(request, response) {
@@ -22,6 +23,7 @@ app.use('/img', express.static(__dirname + '/img'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/libs', express.static(__dirname + '/libs'));
+app.use('/vista', express.static(__dirname + '/vista'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 // ----------------------------------------------------------------------
 
