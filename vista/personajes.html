@@ -33,11 +33,11 @@
 				  	</tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <td>John</td>
-				      <td>Approved</td>
-				      <td title="This is much too long to fit I'm sorry about that">This is much too long to fit I'm sorry about that</td>
-				      <td>80000</td>
+				    <tr ng-repeat="direccion in direcciones">
+				      <td>{{direccion.nombre}}</td>
+				      <td>{{direccion.apellido}}</td>
+				      <td title="This is much too long to fit I'm sorry about that">{{direccion.calle}}</td>
+				      <td>{{direccion.numeroPostal}}</td>
 				    </tr>
 				  </tbody>
 				</table>

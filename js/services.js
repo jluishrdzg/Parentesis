@@ -12,6 +12,13 @@ app.service("proxy",["$http",function($http){
 		});
 	}
 
+	servicio.listar = function(){
+		return $http({
+			method: 'GET',
+			url: 'http://localhost:8888/listar'
+		});
+	}
+
 	// alert("entre al app.service");
 	return servicio;
 }]);
